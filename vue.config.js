@@ -16,29 +16,7 @@ module.exports = defineConfig({
       },
     },
     module: {
-      rules: [
-        // {
-        //   test: /\.svg$/,
-        //   include: path.resolve(__dirname, 'src/assets/icon/svg'),
-        //   use: [
-        //     {
-        //       loader: 'svg-sprite-loader',
-        //       options: {
-        //         outputPath: 'custom-dir/sprites/',
-        //         symbolId: 'icon-[name]',
-        //       },
-        //     },
-        //   ],
-        // },
-        // {
-        //   test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-        //   loader: 'url-loader',
-        //   exclude: [path.resolve(__dirname, 'src/assets/icon/svg')],
-        //   options: {
-        //     limit: 10000,
-        //   },
-        // },
-      ],
+      rules: [],
     },
   },
   chainWebpack(config) {
@@ -90,11 +68,11 @@ module.exports = defineConfig({
           },
         },
       });
-      config.optimization.runtimeChunk('single'),
-        {
-          from: path.resolve(__dirname, './public/robots.txt'), //防爬虫文件
-          to: './', //到根目录下
-        };
+      // config.optimization.runtimeChunk('single'),
+      //   {
+      //     from: path.resolve(__dirname, './public/robots.txt'), //防爬虫文件
+      //     to: './', //到根目录下
+      //   };
     });
   },
 });

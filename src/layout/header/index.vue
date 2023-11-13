@@ -8,7 +8,9 @@
           <span class="name">User</span>
         </div>
         <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item> 登出 </el-dropdown-item>
+          <el-dropdown-item>
+            <el-button style="width: 100px" type="text" @click="logout">登出</el-button>
+          </el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
     </div>
@@ -21,6 +23,12 @@
       return {
         logo: require('@/assets/logo.png'),
       };
+    },
+    methods: {
+      logout() {
+        this.$cookies.removeItem('token');
+        this.$router.push('/login');
+      },
     },
   };
 </script>

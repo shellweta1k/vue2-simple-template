@@ -6,7 +6,6 @@ const state = {
 
 const mutations = {
   SET_ROUTERS(state, list) {
-    console.log([...routes, ...list]);
     state.routes = [...routes, ...list];
   },
 };

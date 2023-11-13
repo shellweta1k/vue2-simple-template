@@ -2,7 +2,7 @@ import cache from './cache';
 import modal from './modal';
 import encrypt from './encrypt';
 import hasPermi from './hasPermi';
-
+import docCookies from '@/utils/cookies';
 // import {
 //   // 时间格式化
 //   parseTime,
@@ -46,7 +46,7 @@ export default {
     Vue.prototype.$cache = cache;
     // 模态框对象
     Vue.prototype.$modal = modal;
-
+    Vue.prototype.$cookies = docCookies;
     // html净化
     // Vue.prototype.$htmlPurify = function (htmls) {
     //   if (!htmls) {

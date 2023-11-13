@@ -11,9 +11,9 @@
 </template>
 
 <script>
-  import asideComponent from './aside/index.vue';
-  import mainComponent from './main/index.vue';
-  import headerComponent from './header/index.vue';
+  import asideComponent from '@/layout/aside/index.vue';
+  import mainComponent from '@/layout/main/index.vue';
+  import headerComponent from '@/layout/header/index.vue';
   export default {
     components: {
       asideComponent,

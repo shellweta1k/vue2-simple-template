@@ -2,13 +2,7 @@
   <el-aside class="aside-container" :class="setting.asideExpend && 'asdie-collapse'">
     <el-scrollbar class="scrollbar" wrap-class="scrollbar-wrapper">
       <div class="logo-container"></div>
-      <el-menu
-        :default-active="matchRoute"
-        class="menu-container"
-        mode="vertical"
-        @select="menuSelect"
-        :router="true"
-        :collapse="true">
+      <el-menu :default-active="matchRoute" class="menu-container" mode="vertical" :router="true" :collapse="true">
         <el-menu-item
           class="menu-item"
           v-for="item in routerList"
@@ -58,7 +52,7 @@
     },
     computed: {
       ...mapState({
-        routerList: (state) => state.router.routes,
+        routerList: (state) => state.router.routes.filter((route) => !route.hidden),
         setting: (state) => state.setting.layoutSetting,
       }),
       matchRoute() {
@@ -85,9 +79,6 @@
     },
     mounted() {},
     methods: {
-      menuSelect(route) {
-        console.log(route);
-      },
       moveShade(routes, activeRoute) {
         const activeIndex = routes.findIndex((item) => item.path === activeRoute.path);
         const shadeDom = document.querySelector('.shade');
